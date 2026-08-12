@@ -1,0 +1,2 @@
+"""CivicDataSpace assistant package."""
+

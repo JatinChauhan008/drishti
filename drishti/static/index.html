@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CivicDataSpace Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/index.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.5/purify.min.js"></script>
+<script src="/static/index.js" defer></script>
+</head>
+<body>
+
+<div id="debug-console">
+  <div id="debug-header">
+    <div id="debug-title"><span class="dot" id="debug-dot"></span>Console</div>
+    <div id="debug-actions">
+      <button type="button" id="debug-full-trace" title="Open the full backend trace console (HTTP calls, MCP tool calls, LLM requests, judge verdicts, errors) in a new tab">Full trace &#8599;</button>
+      <button type="button" id="debug-clear">Clear</button>
+      <button type="button" id="debug-toggle">_</button>
+    </div>
+  </div>
+  <div id="debug-body"></div>
+</div>
+
+<div class="brand">CivicDataSpace Test Assistant</div>
+
+<div id="shell">
+  <div id="greeting-block">
+    <div class="greeting">Hey. Ready to test CivicDataSpace?</div>
+  </div>
+
+  <div id="log"></div>
+
+  <form id="chat-form">
+    <input type="text" id="input" placeholder="Ask about public datasets..." autocomplete="off" />
+    <button type="submit" id="send-btn" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </button>
+  </form>
+
+  <div id="chips">
+    <button type="button" class="chip try" data-q="Search for school datasets">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      Search datasets
+    </button>
+    <button type="button" class="chip try" data-q="How many schools are listed in the most relevant schools dataset?">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+      Count records
+    </button>
+    <button type="button" class="chip try" data-q="Find datasets related to health and show a few examples">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      Preview data
+    </button>
+  </div>
+</div>
+
+</body>
+</html>
